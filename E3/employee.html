@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display XML Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Employee List</h1>
+    <table id="employeeTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Title</th>
+                <th>Division</th>
+                <th>Building</th>
+                <th>Room</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>123</td>
+                <td>nguyen van</td>
+                <td>an</td>
+                <td>programmer</td>
+                <td>IT</td>
+                <td>32 doi can</td>
+                <td>191</td>
+                <td>Normal</td>
+            </tr>
+            <tr>
+                <td>456</td>
+                <td>nguyen thi</td>
+                <td>C</td>
+                <td>asdf</td>
+                <td>IT</td>
+                <td>32 doi can</td>
+                <td>191</td>
+                <td>Normal</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'employees.xml', true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const xml = xhr.responseXML;
+                const employees = xml.getElementsByTagName('employee');
+                const tableBody = document.getElementById('employeeTable').getElementsByTagName('tbody')[0];
+
+                for (let i = 0; i < employees.length; i++) {
+                    const id = employees[i].getAttribute('id');
+                    const firstname = employees[i].getElementsByTagName('firstname')[0].textContent;
+                    const lastname = employees[i].getElementsByTagName('lastname')[0].textContent;
+                    const title = employees[i].getElementsByTagName('title')[0].textContent;
+                    const division = employees[i].getElementsByTagName('division')[0].textContent;
+                    const building = employees[i].getElementsByTagName('building')[0].textContent;
+                    const room = employees[i].getElementsByTagName('room')[0].textContent;
+                    const description = employees[i].getElementsByTagName('des')[0].textContent.trim();
+
+                    const row = tableBody.insertRow();
+                    row.innerHTML = `
+                        <td>${id}</td>
+                        <td>${firstname}</td>
+                        <td>${lastname}</td>
+                        <td>${title}</td>
+                        <td>${division}</td>
+                        <td>${building}</td>
+                        <td>${room}</td>
+                        <td>${description}</td>
+                    `;
+                }
+            }
+        };
+        xhr.send();
+    </script>
+</body>
+</html>
