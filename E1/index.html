@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sản phẩm</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            display: inline-block;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+
+<div id="product-list"></div>
+
+<script>
+    $(document).ready(function() {
+        const products = [
+            {
+                "id": 1,
+                "name": "A",
+                "price": 1000,
+                "description": "AA"
+            },
+            {
+                "id": 2,
+                "name": "B",
+                "price": 2000,
+                "description": "BB"
+            },
+            {
+                "id": 3,
+                "name": "C",
+                "price": 3000,
+                "description": "CC"
+            }
+        ];
+
+        products.forEach(function(product) {
+            $('#product-list').append(`
+                <div class="product">
+                    <h3>${product.name}</h3>
+                    <p>Giá: ${product.price} VNĐ</p>
+                    <p>${product.description}</p>
+                </div>
+            `);
+        });
+    });
+</script>
+
+</body>
+</html>
