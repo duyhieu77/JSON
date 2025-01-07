@@ -1,0 +1,58 @@
+[
+    {
+        "name": "meme",
+        "age": 25,
+        "city": "New York",
+        "country": "USA",
+        "hobbies": ["reading", "coding", "gaming"],
+        "friends": ["John", "Jane", "Bob"]
+    },
+    {
+        "name": "John",
+        "age": 30,
+        "city": "Los Angeles",
+        "country": "USA",
+        "hobbies": ["reading", "coding", "gaming"],
+        "friends": ["Jane", "Bob"]
+    },
+    {
+        "name": "Jane",
+        "age": 28,
+        "city": "Chicago",
+        "country": "USA",
+        "hobbies": ["reading", "coding", "gaming"],
+        "friends": ["John", "Bob"]
+    },
+    {
+        "name": "Bob",
+        "age": 35,
+        "city": "Houston",
+        "country": "USA",
+        "hobbies": ["reading", "coding", "gaming"],
+        "friends": ["John", "Jane"]
+    },
+    {
+        "name": "Alice",
+        "age": 27,
+        "city": "San Francisco",
+        "country": "USA",
+        "hobbies": ["painting", "yoga"],
+        "friends": ["meme", "Jane"]
+    },
+    {
+        "name": "Charlie",
+        "age": 22,
+        "city": "Seattle",
+        "country": "USA",
+        "hobbies": ["music", "traveling"],
+        "friends": ["Bob", "Alice"]
+    },
+    {
+        "name": "David",
+        "age": 26,
+        "city": "Miami",
+        "country": "USA",
+        "hobbies": ["sports", "movies"],
+        "friends": ["Charlie", "John"]
+    }
+]

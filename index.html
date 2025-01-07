@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị Dữ liệu Sinh viên</title>
+    <link rel="stylesheet" href="style.css"> <!-- Đường dẫn đúng -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="main.js" defer></script> <!-- Đường dẫn đúng -->
+</head>
+<body>
+
+    <h1>Danh sách Sinh viên</h1>
+    <p>Nhấn nút dưới đây để tải dữ liệu sinh viên.</p>
+    <button id="btn-load">Tải Dữ liệu</button>
+
+    <table id="tbn-manager">
+        <thead>
+            <tr>
+                <th>Tên</th>
+                <th>Tuổi</th>
+                <th>Thành phố</th>
+                <th>Quốc gia</th>
+                <th>Sở thích</th>
+                <th>Bạn bè</th>
+            </tr>
+        </thead>
+        <tbody id="student-data">
+            <!-- Dữ liệu sinh viên động sẽ được chèn vào đây -->
+        </tbody>
+    </table>
+</body>
+</html>
